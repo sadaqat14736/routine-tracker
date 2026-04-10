@@ -80,7 +80,7 @@ const Login = () => {
                 <Mail className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-primary transition-colors" />
                 <input
                   type="email"
-                  placeholder="Designation (Email)"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant/40 rounded-xl text-on-surface placeholder-outline focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all duration-300 shadow-inner"
@@ -96,7 +96,7 @@ const Login = () => {
                 <Lock className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-primary transition-colors" />
                 <input
                   type="password"
-                  placeholder="Passcode"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant/40 rounded-xl text-on-surface placeholder-outline focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all duration-300 shadow-inner"
@@ -145,13 +145,13 @@ const Login = () => {
             transition={{ delay: 0.5 }}
             className="text-center mt-8 pt-6 border-t border-outline-variant/20"
           >
-            <p className="text-outline text-sm mb-4">No clearance code?</p>
+            <p className="text-outline text-sm mb-4">No, account already ?</p>
             <button
               onClick={() => navigate("/signup")}
               className="text-on-surface hover:text-primary font-semibold transition-colors bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 px-6 py-2 rounded-full text-sm"
               disabled={loading}
             >
-              Initialize Profile
+              Create Account
             </button>
           </motion.div>
         </div>

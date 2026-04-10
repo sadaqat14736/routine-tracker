@@ -69,7 +69,7 @@ const Signup = () => {
               whileHover={{ rotate: [0, 5, -5, 0], scale: 1.05 }}
               transition={{ duration: 0.6 }}
             >
-              <User className="w-10 h-10 text-secondary" />
+              <User className=" w-10 h-10 text-secondary" />
             </motion.div>
             <motion.h1 
               className="text-3xl font-display font-black tracking-widest text-on-surface mb-2 uppercase"
@@ -89,7 +89,7 @@ const Signup = () => {
                 <User className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-secondary transition-colors" />
                 <input
                   type="text"
-                  placeholder="Operative Name"
+                  placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant/40 rounded-xl text-on-surface placeholder-outline focus:outline-none focus:border-secondary focus:bg-surface-container-high transition-all duration-300 shadow-inner"
@@ -105,7 +105,7 @@ const Signup = () => {
                 <Mail className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-secondary transition-colors" />
                 <input
                   type="email"
-                  placeholder="Designation (Email)"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant/40 rounded-xl text-on-surface placeholder-outline focus:outline-none focus:border-secondary focus:bg-surface-container-high transition-all duration-300 shadow-inner"
@@ -121,7 +121,7 @@ const Signup = () => {
                 <Lock className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-secondary transition-colors" />
                 <input
                   type="password"
-                  placeholder="Set Passcode"
+                  placeholder="Set Password "
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant/40 rounded-xl text-on-surface placeholder-outline focus:outline-none focus:border-secondary focus:bg-surface-container-high transition-all duration-300 shadow-inner"
@@ -148,7 +148,7 @@ const Signup = () => {
               disabled={loading || !name || !email || !password}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full h-14 mt-4 bg-gradient-to-br from-secondary to-secondary-container text-on-secondary-container rounded-xl font-display font-bold text-lg tracking-wide shadow-lg hover:shadow-[0_4px_24px_-8px_#44e2cd] disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 uppercase"
+              className="w-full h-14 mt-4 gradient-primary rounded-xl font-display font-bold text-lg tracking-wide shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 uppercase"
             >
               {loading ? (
                 <>
