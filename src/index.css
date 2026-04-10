@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= BASE ================= */
+@layer base {
+  :root {
+    --color-background: #f8f9fc;
+    --color-surface: #ffffff;
+    --color-surface-dim: #f1f3f7;
+    --color-surface-bright: #ffffff;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #fdfdfd;
+    --color-surface-container: #f4f6fa;
+    --color-surface-container-high: #ebeef5;
+    --color-surface-container-highest: #e2e7f0;
+
+    --color-primary: #6b46c1;
+    --color-primary-container: #d8b4fe;
+    --color-on-primary: #ffffff;
+
+    --color-secondary: #00bfa5;
+    --color-secondary-container: #b2f2bb;
+    --color-on-secondary: #ffffff;
+
+    --color-tertiary: #f472b6;
+    --color-outline: #718096;
+    --color-outline-variant: #cbd5e0;
+    --color-on-surface: #1a202c;
+    --color-on-surface-variant: #4a5568;
+    --error: #e53e3e;
+  }
+
+  .dark {
+    --color-background: #0a0a0c;
+    --color-surface: #121214;
+    --color-surface-dim: #0a0a0c;
+    --color-surface-bright: #39393b;
+    --color-surface-container-lowest: #0e0e10;
+    --color-surface-container-low: #151517;
+    --color-surface-container: #1b1b1d;
+    --color-surface-container-high: #242426;
+    --color-surface-container-highest: #2d2d2f;
+
+    --color-primary: #d0bcff;
+    --color-primary-container: #a078ff;
+    --color-on-primary: #3c0091;
+
+    --color-secondary: #44e2cd;
+    --color-secondary-container: #03c6b2;
+    --color-on-secondary: #003730;
+
+    --color-tertiary: #ffafd3;
+    --color-outline: #94a3b8;
+    --color-outline-variant: #334155;
+    --color-on-surface: #f8fafc;
+    --color-on-surface-variant: #cbd5e1;
+    --error: #ffb4ab;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(160, 120, 255, 0.3);
+  }
+
+  .dark ::selection {
+    background-color: rgba(208, 188, 255, 0.3);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--color-on-surface);
+    transition: color 0.5s;
+  }
+}
+
+/* ================= COMPONENTS ================= */
+@layer components {
+
+  .glass-panel {
+    background-color: color-mix(in srgb, var(--color-surface-container), transparent 60%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 70%);
+    transition: all 0.5s ease;
+  }
+
+  .dark .glass-panel {
+    background-color: color-mix(in srgb, var(--color-surface-container-low), transparent 40%);
+  }
+
+  .ghost-border {
+    border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 70%);
+    transition: border-color 0.5s;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(to bottom right,
+        var(--color-primary),
+        var(--color-primary-container));
+    color: var(--color-on-primary);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-ambient {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.5s ease;
+  }
+
+  .dark .shadow-ambient {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar-link-active {
+    background-color: color-mix(in srgb, var(--color-primary), transparent 90%);
+    border: 1px solid color-mix(in srgb, var(--color-primary), transparent 70%);
+    color: var(--color-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shadow-t-glow {
+  box-shadow: 0 -4px 10px rgba(107, 70, 193, 0.2);
+}
